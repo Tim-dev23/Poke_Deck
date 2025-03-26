@@ -1,10 +1,10 @@
 let cardInfos = [];
-
 const Base_url = "https://pokeapi.co/api/v2/pokemon/"
 
  function onloadFunc() {
     document.getElementById("search_input").addEventListener("input", searchPokemon);
     getCard();
+    getOverlayCardTemplate(1);
 }
 
  async function getData(index){
@@ -17,9 +17,8 @@ const Base_url = "https://pokeapi.co/api/v2/pokemon/"
     return responseToJson = await response.json();
  }
 
- async function getCard(i) {
-    const cardSection = document.querySelector(".card_section"); 
-    
+ async function getCard() {
+     
     for (let i = 1; i <= 10; i++) {
         try {
             const data = await getData(i);
@@ -45,9 +44,6 @@ const Base_url = "https://pokeapi.co/api/v2/pokemon/"
                         speed: data.stats[5].base_stat,
                     }
                 });                
-
-                //const cardTemplate = getCardTemplate(data); 
-                //cardSection.innerHTML += cardTemplate; 
             } else {
                 console.error(`Fehler beim Abrufen der Daten für Pokémon #${i}`);
             }
@@ -55,15 +51,9 @@ const Base_url = "https://pokeapi.co/api/v2/pokemon/"
             console.error(`Fehler beim Abrufen der Daten für Pokémon #${i}:`, error);
         }
     }
-
-
     renderCard();
-    //console.log(cardInfos);
-    //alert("Pokémon-Daten geladen!");
+    getOverlayCard(1);
 }
-
-
-
 
 async function renderCard() {
     const cardSection = document.querySelector(".card_section"); 
@@ -78,30 +68,25 @@ async function renderCard() {
             console.error(`Fehler beim Abrufen der Daten für Pokémon #${i}:`, error);
         }
     }
-
     console.log(cardInfos);
-    //alert("Pokémon-Daten geladen!");
-
 }
 
 async function searchPokemon() {
     const input = document.getElementById("search_input").value.toLowerCase();
-
+    const searchInfo = document.getElementById("search_info_text");
+    
     if (input.length < 3 && input.length > 0) {
+        searchInfo.innerHTML = "Please type min. 3 letters";
         return;
     }
-
     if(input.length === 0){
+        searchInfo.innerHTML = ""; 
         renderCard();
         return;
     }
-
     const filteredCards = cardInfos.filter(card => card.name.toLowerCase().includes(input));
-
     if (filteredCards.length > 0) {
-       
         console.log(filteredCards);
-        
         const cardSection = document.querySelector(".card_section");
         cardSection.innerHTML = "";
         for (let i = 0; i < filteredCards.length; i++) {
@@ -109,13 +94,11 @@ async function searchPokemon() {
             const data = await getData(filteredCards[i].id);
             const cardTemplate = getCardTemplate(data); 
             cardSection.innerHTML += cardTemplate;
-
         }
     } else {
-         alert("Keine Pokémon gefunden.");
+     alert("Keiin Po0kemon gefunden")
     }
 }
-
 
 function getCollor(type) {
     switch (type) {
@@ -166,4 +149,21 @@ function on() {
 
 function off() {
     document.getElementById("overlay").style.display = "none";
-  }
+}
+
+function getOverlayCard(index){
+    const ov = document.getElementById("overlay"); 
+    const data = cardInfos[index]; 
+    ov.innerHTML = getOverlayCardTemplate(data);
+
+    getStatsInfo(index);
+}
+
+function getStatsInfo(index){
+    
+    let statsInfoField = document.getElementById("ov_card_info");
+    statsInfoField.innerHTML = "";
+    const data = cardInfos[index];
+    console.log(data.stats);
+    statsInfoField.innerHTML = getStatsTamplate(data);
+} 

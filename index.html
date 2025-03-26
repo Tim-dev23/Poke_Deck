@@ -10,13 +10,20 @@
     <script src="./script/tamplate.js"></script>
 </head>
 <body onload="onloadFunc()">
+    <div id="overlay"  class="overlay d_non">
+
+    </div>
+
     <div class="head_section">
         <div class="head_search_container">
         <div class="head_smal_logo_container">
             <img class="pokeball" src="./img/pokeball.png" >
             <p class="smal_logo_text">Poke´ Deck </p>
         </div>
+        <div class="search_section">
             <input type="search" class="search_input" id="search_input" placeholder="Search Pokemon">
+            <p id="search_info_text"></p>
+        </div>
         </div>
         <div class="head_logo_container">   
             <img src="./img/pngimg.com - pokemon_logo_PNG9.png" alt="">
@@ -27,28 +34,11 @@
         <div id="load_screen">
           
         </div>
-    
 
 
-    <div class="foter_section"></div>
+
+    <div class="footer_section"></div>
 </body>
 </html>
 
-
-<!--
-    <div class="card_section">
-        <div class="card">
-            <div class="card_header">
-                <div class="card_header_text">
-                    <p class="poke_number" id="poke_number">#1</p>
-                    <p class="poke_name" id="poke_name">Bulbasaur</p>
-                </div>
-            </div>
-    <div class="card_img_container"><img class="card_img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/1.png"/></div>
-            <div class="card_footer">
-                <img class="element_icon" id="element_icon" src="https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/poison.png">
-                <img class="element_icon" id="element_icon"  src="https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/grass.png">
-            </div>
-        </div>
-    </div>-->
 

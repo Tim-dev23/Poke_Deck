@@ -3,8 +3,10 @@ body{
     background-color: rgb(134, 144, 180);
     margin: 0;
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-    font-family: 'Poppins', sans-serif;}
+    font-family: 'Poppins', sans-serif;
+}
 
+/*Head Section*****************************************************/
 .head_section {
     width: 100%;
     height: 300px;
@@ -23,15 +25,6 @@ body{
     align-items: center;
     justify-content: space-between;
 
-}
-
-input{
-    width: 250px;
-    height: 30px;
-    border-radius: 4px;
-    border: 1px solid black;
-    margin-right: 10px;
-    font-family: 'Roboto', sans-serif;
 }
 
 .head_logo_container{
@@ -62,7 +55,27 @@ input{
     padding-right: 8px;
 }
 
+/*search Section***************************************/
 
+.search_section{
+    width: 250px;
+    height: 50px;
+    margin-right: 10px;
+ }
+ 
+ input{
+     width: 250px;
+     height: 30px;
+     border-radius: 4px;
+     border: 1px solid black;
+     font-family: 'Roboto', sans-serif;
+ }
+ 
+ #search_info_text{
+     color: #945957;
+ }
+
+/*Card Section******************************************/
 
 .card_section {
     margin-top: 20px; 
@@ -100,7 +113,7 @@ input{
 }
 
 .card_header_text{
-    display: flex; /* Aktiviert Flexbox */
+    display: flex; 
     gap: 30px;
     align-items: center; 
     font-size: 20px;
@@ -151,16 +164,7 @@ input{
     gap: 20px;
 }
 
-.foter_section{
-    width: 100%;
-    height: 100px;
-    background-color: rgb(67, 80, 121);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 15px 0px 15px 0px rgba(0,0,0,0.75);
-    bottom: 0px;
-}
+/*Loadscreen Section*********************************************/
 
 .load_screen_section{
     height: 500px;
@@ -215,6 +219,134 @@ input{
     margin-right: 5px;
 }
 
+/*Overlay Section**************************************/
+
+.overlay {
+    position: absolute;
+     height: 100%;
+     width: 100%;
+     background-color: rgba(0, 0, 0, 0.375);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .ov_card{
+    height: 650px;
+    width: 400px;
+    border-radius: 12px;
+    background-color: #e9e2cb;
+ }
+
+.ov_card_header{
+    width: 100%;
+    height: 50px;
+}
+
+.ov_card_header_text{
+    display: flex; 
+    gap: 30px;
+    align-items: center; 
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    flex-direction: row;
+    color: #e9e2cb;
+}
+
+.ov_poke_number{
+    padding-left: 15px;
+}
+
+.ov_card_bg_container{
+    width: 100%;
+    height: 300px;
+    background-color: #80CC4C;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    flex-direction: column;
+    border-radius: 12px;
+}
+.ov_card_img_container{
+    width: 90%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.ov_card_img{
+    width: 320px;
+}
+
+/*.ov_card_img:hover{
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}*/
+
+.ov_card_info_section{
+    width: 100%;
+    height: 240px;
+}
+
+.ov_card_info{
+    height: 180px;
+    width: 100%;
+}
+
+.ov_card_navbar_section{
+    margin-top:45px;
+    height: 40px;
+    width: 100%;
+}
+
+.ov_card_navbar{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.card_navbar_txt{
+    font-weight: bold;
+    color: #3f3e3e;
+    font-size: 15px;
+}
+
+.divider {
+    border-top: 4px solid #3f3e3e;
+    border-radius:20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.ov_element_section{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.ov_element_icon{
+    width: 40px;
+    margin: 15px;
+    filter: drop-shadow(5px 5px 5px 5px);
+}
+
+
+/*Footer Section*************************************************/
+.footer_section{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(67, 80, 121);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 15px 0px 15px 0px rgba(0,0,0,0.75);
+    bottom: 0px;
+}
 
 /*https://pokeapi.co/api/v2/pokemon/ditto*/
  
