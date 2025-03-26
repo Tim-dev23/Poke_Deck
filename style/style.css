@@ -1,0 +1,280 @@
+
+body{  
+    background-color: rgb(134, 144, 180);
+    margin: 0;
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+    font-family: 'Poppins', sans-serif;}
+
+.head_section {
+    width: 100%;
+    height: 300px;
+    background-color: rgb(67, 80, 121);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    flex-direction: column;
+}
+
+.head_search_container{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+input{
+    width: 250px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid black;
+    margin-right: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.head_logo_container{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.head_smal_logo_container{
+    height: 100px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.smal_logo_text{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.pokeball{
+    width: 40px;
+    padding-right: 8px;
+}
+
+
+
+.card_section {
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    width: 100%;
+    height: calc(100% - 300px); 
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start;
+}
+
+.card{
+    margin-top: 40px;
+    width: 200px;
+    height: 300px;
+    background-color:#e9e2cb;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-width: 2px
+}
+
+.card:hover{
+    transform: scale(1.05);
+    transition: transform 0.2s;
+}
+
+.card_header{
+    width: 100%;
+    height: 50px;
+}
+
+.card_header_text{
+    display: flex; /* Aktiviert Flexbox */
+    gap: 30px;
+    align-items: center; 
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    flex-direction: row;
+}
+
+.poke_number{
+    padding-left: 15px;
+}
+
+.card_img_container{
+    border-radius: 8px;
+    width: 90%;
+    height: 200px;
+    background-color: #80CC4C;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.card_img{
+    width: 140px;
+}
+
+.card_img:hover{
+    filter: drop-shadow(5px 5px 5px #4141419f);    
+}
+
+.card_footer{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.element_icon{
+    width: 30px;
+}
+
+.card_section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.foter_section{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(67, 80, 121);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 15px 0px 15px 0px rgba(0,0,0,0.75);
+    bottom: 0px;
+}
+
+.load_screen_section{
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.load_bg{
+    width:300px;
+    animation: rotate 3s linear infinite;
+
+}
+
+.load_text_section{
+    width: 100%;
+    height: 100px;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress_text{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.laod_progress_number{
+    font-size: 30px !important;
+    color: #DE4A44 !important;
+    margin-right: 5px;
+}
+
+.pokemon_amount_number{
+    font-size: 30px !important;
+    color: #333E44 !important;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+/*https://pokeapi.co/api/v2/pokemon/ditto*/
+ 
+/*
+
+picture of pokemon link:
+https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/1.svg
+https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png
+
+
+"ability"
+"base_experience"
+"forms"
+"game_indices"  
+"height"
+"weight"
+
+"stats"
+
+
+TO DO LIST:
+
+    search barr: 
+        -min 3 letter masage
+
+    onklick big card:
+        -overlay + background disabled
+        -big card desing (otehr pokemon desing onclick)
+        -ad infos to big card
+        - last and next card butons
+
+    laoding Bars: 15-15:30 Uhr (30min)
+        -loding screen
+        -schow more button + loading cricle
+        (wihle loding disable button)
+    
+    footer:
+        -logo
+        -social media icons+links
+        -impressum
+        -datenschutz
+
+    rules:
+        use git hub, git comit after sesion, git ignore
+        -englissh
+        -content begrenzungmax-width z.B. bei 1920px oder 1440px
+        -reposiv up to 320px
+
+    extras:    
+        -back to tob button
+        -sortby elemet option
+        -animated background
+        -shiny cards
+        -ad poke-ball shape to card bkground (like the desing exeples)
+        -ad animation pokemon onhover/onklick
+
+    ideas:
+        -bordelles desing
+        -dark mode (darker style)
+
+    DEADLINE: 29.03.2025    
+    CLEAN CODE
+*/
