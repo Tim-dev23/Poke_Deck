@@ -4,7 +4,6 @@ const Base_url = "https://pokeapi.co/api/v2/pokemon/"
  function onloadFunc() {
     document.getElementById("search_input").addEventListener("input", searchPokemon);
     getCard();
-    getOverlayCardTemplate(1);
 }
 
  async function getData(index){
@@ -100,7 +99,7 @@ async function searchPokemon() {
     }
 }
 
-function getCollor(type) {
+function getColor(type) {
     switch (type) {
         case "normal":
             return "#A8A77A";
@@ -142,7 +141,7 @@ function getCollor(type) {
             return "#000000";
     }   
 }
-
+        
 function on() {
     document.getElementById("overlay").style.display = "block";   
 }
@@ -166,4 +165,18 @@ function getStatsInfo(index){
     const data = cardInfos[index];
     console.log(data.stats);
     statsInfoField.innerHTML = getStatsTamplate(data);
+
 } 
+
+function getMainInfo(index){
+ /*
+    let mainInfoField = document.getElementById("ov_card_info");
+    mainInfoField.innerHTML = "";
+    const data = cardInfos[index];
+    console.log(data.stats);
+    mainInfoField.innerHTML = getMainTamplate(data);
+
+*/
+}
+
+

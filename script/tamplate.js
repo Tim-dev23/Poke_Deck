@@ -7,7 +7,7 @@ function getCardTemplate(data) {
                   <p class="poke_name">${data.name.charAt(0).toUpperCase() + data.name.slice(1)}</p>
               </div>
           </div>
-          <div class="card_img_container" style="background-color: ${getCollor(data.types[0].type.name)};">
+          <div class="card_img_container" style="background-color: ${getColor(data.types[0].type.name)};">
               <img class="card_img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${data.id}.png" alt="${data.name}">
           </div>
           <div class="card_footer">
@@ -25,7 +25,7 @@ function getCardTemplate(data) {
 function getOverlayCardTemplate(data) {
     return `
 <div class="ov_card">
-    <div class="ov_card_bg_container" style="background-color: ${getCollor(data.types[0].type.name)};">
+    <div class="ov_card_bg_container" style="background-color: ${getColor(data.types[0].type.name)};">
         <div class="ov_card_header">
             <div class="ov_card_header_text">
                 <p class="ov_poke_number">#${data.id}</p>
@@ -39,8 +39,8 @@ function getOverlayCardTemplate(data) {
         <div class="ov_card_info_section"> 
             <div class="ov_card_navbar_section">
                 <div class="ov_card_navbar">
-                    <div onclick="" class="card_navbar_txt">Stats</div>
-                    <div onclick=""  class="card_navbar_txt">Ability</div>
+                    <div onclick="getStatsInfo(index)" class="card_navbar_txt">Stats</div>
+                    <div onclick="getMainInfo(index)"  class="card_navbar_txt">Main</div>
                     <div  onclick=""  class="card_navbar_txt">Evo</div>
                 </div>
                 <div class="divider"></div>
@@ -62,19 +62,28 @@ function getOverlayCardTemplate(data) {
   function getStatsTamplate(data){
 
     return`
-    <div id="stats_info">
-        hp              ${data.stats.hp}
-        attack          ${data.stats[1]}
-        defense         ${data.stats[2]}
-        special-attack  ${data.stats[3]}
-        special-defense ${data.stats[4]}
-        speed            
+    <div id="stats_info" class = "stats_info"> 
+    <div class = "stats">
+        <div>hp:              ${data.stats.hp}</div>
+        <div>attack:          ${data.stats.attack}</div>
+        <div>defense:         ${data.stats.defense}</div>
+        <div>special-attack:  ${data.stats.specialAttack}</div>
+        <div>special-defense. ${data.stats.specialDefense}</div>
+        <div>speed:           ${data.stats.speed}</div>
+    </div>
     </div>
     `;
   }
 
-  function getAbilityTamplate(){
-    
+  function getMainTamplate(data){
+    return`
+    <div class="main_info">
+        <div>Height: ${data.stats.height}</div>
+        <div>Weight: ${data.stats.weight}</div>
+        <div>Gender: ${data.stats.gender}</div>
+        <div>Ability: ${data.stats.ability}</div>
+    </div>
+    `;
   }
 
   function getEvoTamplate(){

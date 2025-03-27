@@ -314,6 +314,12 @@ body{
     font-size: 15px;
 }
 
+.card_navbar_txt:hover{
+    color: #a04f4c;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
 .divider {
     border-top: 4px solid #3f3e3e;
     border-radius:20px;
@@ -334,6 +340,27 @@ body{
     margin: 15px;
     filter: drop-shadow(5px 5px 5px 5px);
 }
+
+.stats_info{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 40px;
+}
+
+.stats{
+    gap: 80px;
+}
+
+
+
+.progress_bar_bg{
+    width: 40px;
+    height: 10px;
+    color: #777676;
+}
+
+
 
 
 /*Footer Section*************************************************/
