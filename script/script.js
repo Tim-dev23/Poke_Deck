@@ -181,6 +181,11 @@ function getMainInfo(){
     mainInfoField.innerHTML = getMainTamplate(data);
 }
 
+function getEvoinfo(){
+    let evoInfoField = document.getElementById("ov_card_info");
+    const data = cardInfos[cardIndex] ;
+    evoInfoField.innerHTML = getEvoTamplate(data);
+}
 
 function nextPicture(index) {
 
