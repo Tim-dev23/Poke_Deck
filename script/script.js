@@ -97,7 +97,8 @@ async function searchPokemon() {
         cardSection.innerHTML = "";
         for (let i = 0; i < filteredCards.length; i++) {
             
-            const data = await getData(filteredCards[i].id);
+           // const data = await getData(filteredCards[i].id);
+            const data = cardInfos[filteredCards[i].id - 1];
             const cardTemplate = getCardTemplate(data); 
             cardSection.innerHTML += cardTemplate;
         }
