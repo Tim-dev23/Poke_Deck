@@ -10,11 +10,11 @@
     <script src="./script/tamplate.js"></script>
 </head>
 <body onload="onloadFunc()">
-    <div id="overlay"  class="overlay d_non">
+    <div id="overlay"  class="overlay" onclick="off(cardIndex)">
 
     </div>
 
-    <div class="head_section">
+    <div class="head_section" id="overlay_content">
         <div class="head_search_container">
         <div class="head_smal_logo_container">
             <img class="pokeball" src="./img/pokeball.png" >
@@ -32,7 +32,7 @@
 
     <div class="card_section" id="card_section">
         <div id="load_screen">
-          
+            <div class="footer_section"></div>
         </div>
 
 
@@ -42,4 +42,14 @@
 </html>
 
 
+<div class="main_info_section">
+    <div class="main_txt">Weight: 
+    <div class="main_txt">Height: 
+<div class="main_txt">Base experience:
+    <div class="main_txt">Ability:
+</div>
 
+<div class="main_info">${data.weight}</div>
+<div class="main_info">${data.height}</div>
+<div class="main_info"> ${data.base_experience}</div>
+<div class="main_info">${abilitiesText}</div>

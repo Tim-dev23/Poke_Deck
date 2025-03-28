@@ -1,7 +1,9 @@
 let cardInfos = [];
 const Base_url = "https://pokeapi.co/api/v2/pokemon/"
 
- function onloadFunc() {
+let cardIndex = 0; 
+
+function onloadFunc() {
     document.getElementById("search_input").addEventListener("input", searchPokemon);
     getCard();
 }
@@ -17,11 +19,11 @@ const Base_url = "https://pokeapi.co/api/v2/pokemon/"
  }
 
  async function getCard() {
-     
+    evo_idx_temp = 1;
     for (let i = 1; i <= 10; i++) {
         try {
             const data = await getData(i);
-            if( i < 10){
+            if( i < 2){
               document.getElementById('card_section').style.display = "none";     
             let progress = document.getElementById("load_screen");
             progress.innerHTML = getLoadScreenTamplate(i);
@@ -41,8 +43,14 @@ const Base_url = "https://pokeapi.co/api/v2/pokemon/"
                         specialAttack: data.stats[3].base_stat,
                         specialDefense: data.stats[4].base_stat,
                         speed: data.stats[5].base_stat,
-                    }
-                });                
+                    },
+                    weight: data.weight,
+                    height: data.height,
+                    base_experience: data.base_experience,
+                    evo_idx: evo_idx_temp 
+                });
+                evo_idx_temp++;
+                if(evo_idx_temp > 3) evo_idx_temp = 1;
             } else {
                 console.error(`Fehler beim Abrufen der Daten für Pokémon #${i}`);
             }
@@ -51,7 +59,6 @@ const Base_url = "https://pokeapi.co/api/v2/pokemon/"
         }
     }
     renderCard();
-    getOverlayCard(1);
 }
 
 async function renderCard() {
@@ -142,8 +149,10 @@ function getColor(type) {
     }   
 }
         
-function on() {
-    document.getElementById("overlay").style.display = "block";   
+function on(index) {
+    document.getElementById("overlay").style.display = "flex";
+    cardIndex = index;
+    getOverlayCard(cardIndex);
 }
 
 function off() {
@@ -155,28 +164,38 @@ function getOverlayCard(index){
     const data = cardInfos[index]; 
     ov.innerHTML = getOverlayCardTemplate(data);
 
-    getStatsInfo(index);
+    getStatsInfo();
 }
 
-function getStatsInfo(index){
-    
+function getStatsInfo(){
     let statsInfoField = document.getElementById("ov_card_info");
     statsInfoField.innerHTML = "";
-    const data = cardInfos[index];
-    console.log(data.stats);
+    const data = cardInfos[cardIndex];
     statsInfoField.innerHTML = getStatsTamplate(data);
-
 } 
 
-function getMainInfo(index){
- /*
+function getMainInfo(){
     let mainInfoField = document.getElementById("ov_card_info");
     mainInfoField.innerHTML = "";
-    const data = cardInfos[index];
-    console.log(data.stats);
+    const data = cardInfos[cardIndex] ;
     mainInfoField.innerHTML = getMainTamplate(data);
-
-*/
 }
 
 
+function nextPicture(index) {
+
+    index++;
+    if (index >= cardInfos.length) {
+        index = cardInfos.length - 1; 
+    }
+    getOverlayCard(index);
+}
+
+function lastPicture(index) {
+
+    index--;
+    if (index <= 0) {
+        index = 0;
+    }
+    getOverlayCard(index);
+}

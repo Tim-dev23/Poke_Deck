@@ -220,8 +220,11 @@ body{
 }
 
 /*Overlay Section**************************************/
+.d_none{
+    display: none  !important;
+}
 
-.overlay {
+/*#overlay {
     position: absolute;
      height: 100%;
      width: 100%;
@@ -229,13 +232,27 @@ body{
      display: flex;
      justify-content: center;
      align-items: center;
- }
+ }*/
+
+ #overlay {
+    display: none; /* Standardmäßig ausgeblendet */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
 
  .ov_card{
     height: 650px;
     width: 400px;
     border-radius: 12px;
     background-color: #e9e2cb;
+ 
  }
 
 .ov_card_header{
@@ -266,7 +283,8 @@ body{
     justify-content: center;
     align-items: center;  
     flex-direction: column;
-    border-radius: 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 .ov_card_img_container{
     width: 90%;
@@ -279,11 +297,6 @@ body{
 .ov_card_img{
     width: 320px;
 }
-
-/*.ov_card_img:hover{
-    transform: scale(1.1);
-    transition: transform 0.2s;
-}*/
 
 .ov_card_info_section{
     width: 100%;
@@ -328,40 +341,165 @@ body{
 }
 
 .ov_element_section{
-    width: 100%;
+    width: 300px;
     height: 60px;
     display: flex;
-    justify-content:space-between;
+    
+    justify-content: center;
     align-items: center;
 }
 
 .ov_element_icon{
     width: 40px;
-    margin: 15px;
+    margin: 8px;
     filter: drop-shadow(5px 5px 5px 5px);
 }
 
-.stats_info{
+.stats_info_container{
+    height: 180px;
+    width: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    padding-left: 40px;
+    flex-direction: row;
+}
+
+.stats_info{
+    gap: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .stats{
-    gap: 80px;
+    display: flex;
+    flex-direction: row;
 }
 
+.stats_txt_section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: block;
+}
 
+.stats_txt{
+    color: #333E44;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
-.progress_bar_bg{
-    width: 40px;
+.stats_bar_section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.stats_bar_outer{
+    width:80px;
     height: 10px;
-    color: #777676;
+    background-color: #7270707a;
+    color: black;
+    border-radius: 12px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #333E44;
+    margin-bottom: 14px;
+    display: flex
+}
+
+.stats_bar_inner{ 
+ background-color: #a04f4c; 
+ height: 10px;
+ border-radius: 12px;
+
 }
 
 
+.main_info_section{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+}
 
+.main_info{
+    color: #945957;
+}
+
+.main_txt{
+    font-size: 15px;
+    font-weight: bold;
+    color: #333E44;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px; 
+
+}
+
+.evo_container{
+    width: 100%;
+    height: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.evo_img_section{
+    width: 110px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.evo_img{
+    width: 110px;
+
+}
+
+.arow_section{
+    width: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arow{
+    width: 20px;
+}
+
+.ov_card_footer{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.next_section{
+    width: 50px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.next1{
+    width: 30px;
+    margin-left: 12px ;
+}
+
+.next2{
+    width: 30px;
+}
 
 /*Footer Section*************************************************/
 .footer_section{
@@ -433,6 +571,9 @@ TO DO LIST:
     ideas:
         -bordelles desing
         -dark mode (darker style)
+
+        3,
+    getmainTampplate überarbeiten
 
     DEADLINE: 29.03.2025    
     CLEAN CODE
