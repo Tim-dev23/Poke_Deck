@@ -63,23 +63,25 @@ body{
     margin-right: 10px;
  }
  
- input{
+ .search_input{
      width: 250px;
      height: 30px;
      border-radius: 4px;
-     border: 1px solid black;
+     border-style:  solid;
+     border-color: #333E44;
+     border-width: 2px;
      font-family: 'Roboto', sans-serif;
  }
  
  #search_info_text{
-     color: #945957;
+     color: #beb3b3d8;
  }
 
 /*Card Section******************************************/
 
 .card_section {
-    margin-top: 20px; 
-    margin-bottom: 20px;
+    margin-top: 40px; 
+    margin-bottom: 40px;
     width: 100%;
     height: calc(100% - 300px); 
     display: flex; 
@@ -88,7 +90,7 @@ body{
 }
 
 .card{
-    margin-top: 40px;
+    margin: 15px;
     width: 200px;
     height: 300px;
     background-color:#e9e2cb;
@@ -219,6 +221,32 @@ body{
     margin-right: 5px;
 }
 
+.load_more_btn_section{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.load_more_btn{
+    width: 120px;
+    height: 40px;
+    border-style: solid;
+    border-color: white;
+    border-width: 3px;
+    border-radius: 8px;
+    background-color: #DE4A44;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.load_more_btn:hover{
+    transform: scale(1.2);
+    transition: transform 0.2s;
+    background-color: #f36863;
+}
+
 /*Overlay Section**************************************/
 .d_none{
     display: none  !important;
@@ -296,6 +324,7 @@ body{
 
 .ov_card_img{
     width: 320px;
+    filter: drop-shadow(7px 10px 5px rgba(43, 42, 42, 0.555));
 }
 
 .ov_card_info_section{
@@ -502,17 +531,173 @@ body{
 }
 
 /*Footer Section*************************************************/
-.footer_section{
+.footer_section {
     width: 100%;
     height: 100px;
     background-color: rgb(67, 80, 121);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     box-shadow: 15px 0px 15px 0px rgba(0,0,0,0.75);
-    bottom: 0px;
+    bottom: 0;
+    z-index: 1000; 
 }
 
+.footer_logo_section{
+    height: 100px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer_logo{
+    width: 50px;
+}
+.footer_logo_txt{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 5px;
+    color: white;
+}
+
+.footere_txt_section{
+    width: 230px;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.footer_txt{
+    text-decoration: none;
+    color: white;
+    font-size: bold;
+    font-weight: 15px;
+}
+
+.footer_txt:hover{
+    color: #DE4A44;
+}
+
+a{
+    text-decoration: none;
+}
+
+.footer_seperator{
+    color: white;
+    font-size: 18px;
+    margin: 5px;
+}
+
+.icon_section{
+    width: 240px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_icon:hover{
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}
+
+.footer_icon{
+    width: 40px;
+    margin: 8px;
+}
+
+.footer_icon_nin{
+    width: 60px;
+    margin: 8px;
+}
+
+.footer_icon_nin:hover{
+    transform: scale(1.2);
+    transition: transform 0.2s;
+}
+
+.footer_section_impressum{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(67, 80, 121);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 15px 0px 15px 0px rgba(0,0,0,0.75);
+    bottom: 0;
+    z-index: 1000;
+    position: fixed;
+}
+
+.header_section_impressum {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(67, 80, 121);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 15px 0px 15px 0px rgba(0, 0, 0, 0.75);
+    top: 0; /* Positioniere den Header oben */
+    left: 0; /* Stelle sicher, dass er links ausgerichtet ist */
+    z-index: 1000; /* Stelle sicher, dass er über anderen Elementen liegt */
+    position: fixed; /* Fixiere den Header */
+}
+
+.impressum_name{
+    margin-top: 200px;
+
+}
+
+.home_buton_section{
+    width: 70px;
+    height: 100%;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home_buton{
+    width: 40px;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.header_section_Datenschutz {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(67, 80, 121);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 15px 0px 15px 0px rgba(0, 0, 0, 0.75);
+    top: 0; /* Positioniere den Header oben */
+    left: 0; /* Stelle sicher, dass er links ausgerichtet ist */
+    z-index: 1000; /* Stelle sicher, dass er über anderen Elementen liegt */
+}
+
+.footer_section_datenschutz{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(67, 80, 121);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 15px 0px 15px 0px rgba(0,0,0,0.75);
+    bottom: 0;
+    z-index: 1000;
+}
+
+.border{
+    margin-left: 40px;
+    margin-right: 40px;
+}
 /*https://pokeapi.co/api/v2/pokemon/ditto*/
  
 /*

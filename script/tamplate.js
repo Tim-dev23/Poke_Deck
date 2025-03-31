@@ -102,7 +102,7 @@ function getOverlayCardTemplate(data) {
     }
 
     return`
-    <div class="main_info_section">
+    <div id = "main_info_section" class="main_info_section">
         <div class="main_txt">Weight: <p class="main_info">${data.weight}</p></div>
         <div class="main_txt">Height: <p class="main_info">${data.height}</p></div>
         <div class="main_txt">Base experience: <p class="main_info">${data.base_experience}</p></div>
@@ -133,7 +133,7 @@ function getOverlayCardTemplate(data) {
     }
     
     return`
-     <div class="evo_container">
+     <div  id = "evo_container" class="evo_container">
         <div class="evo_img_section">
            <img class="evo_img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${idx[0]}.png">
         </div>
